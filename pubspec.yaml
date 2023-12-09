@@ -1,7 +1,7 @@
 name: purrfact
 description: "A new Flutter project."
 publish_to: 'none'
-version: 0.1.0
+version: 2.0.0+4
 
 environment:
   sdk: '>=3.2.0 <4.0.0'
@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   dio: 5.4.0
-  flutter_native_splash: 2.3.6
+  flutter_native_splash: 2.3.8
   get_it: 7.6.4
   logger: 2.0.2+1
   watch_it: 1.1.0
