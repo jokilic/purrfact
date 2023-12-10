@@ -13,27 +13,21 @@ class DioService {
   /// CONSTRUCTOR
   ///
 
-  final LoggerService loggerService;
+  final LoggerService logger;
 
-  DioService(this.loggerService)
-
-  ///
-  /// INIT
-  ///
-
-  {
-    dio = Dio(
-      BaseOptions(
-        baseUrl: 'https://catfact.ninja',
-      ),
-    )..interceptors.add(
-        DioLoggerInterceptor(loggerService),
-      );
+  DioService(this.logger) {
+    logger.t('DioService initialized');
   }
 
   ///
   /// VARIABLES
   ///
 
-  late final Dio dio;
+  late final dio = Dio(
+    BaseOptions(
+      baseUrl: 'https://catfact.ninja',
+    ),
+  )..interceptors.add(
+      DioLoggerInterceptor(logger),
+    );
 }

@@ -4,13 +4,19 @@ import '../models/fact.dart';
 import 'logger_service.dart';
 
 class APIService {
+  ///
+  /// CONSTRUCTOR
+  ///
+
   final LoggerService logger;
   final Dio dio;
 
   APIService({
     required this.logger,
     required this.dio,
-  });
+  }) {
+    logger.t('APIService initialized');
+  }
 
   ///
   /// `fact`

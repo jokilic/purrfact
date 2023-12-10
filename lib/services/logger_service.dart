@@ -5,6 +5,14 @@ import 'package:logger/logger.dart';
 
 class LoggerService {
   ///
+  /// CONSTRUCTOR
+  ///
+
+  LoggerService() {
+    logger.t('LoggerService initialized');
+  }
+
+  ///
   /// VARIABLES
   ///
 
@@ -48,6 +56,10 @@ class LoggerService {
 }
 
 class DioLoggerInterceptor implements Interceptor {
+  ///
+  /// CONSTRUCTOR
+  ///
+
   final LoggerService logger;
 
   DioLoggerInterceptor(this.logger);

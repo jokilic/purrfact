@@ -32,13 +32,17 @@ Future<void> main() async {
       ),
     )
     ..registerLazySingleton<HomeController>(
-      () => HomeController(api: getIt<APIService>()),
+      () => HomeController(
+        logger: getIt<LoggerService>(),
+        api: getIt<APIService>(),
+      ),
     );
 
-  runApp(MainApp());
+  /// Run [PurrFact]
+  runApp(PurrFactApp());
 }
 
-class MainApp extends StatelessWidget {
+class PurrFactApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         title: 'PurrFact',

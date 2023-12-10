@@ -1,16 +1,33 @@
 import 'package:flutter/material.dart';
 
 import '../../services/api_service.dart';
+import '../../services/logger_service.dart';
 
 class HomeController {
+  ///
+  /// CONSTRUCTOR
+  ///
+
+  final LoggerService logger;
   final APIService api;
 
   HomeController({
+    required this.logger,
     required this.api,
-  });
+  }) {
+    logger.t('HomeController initialized');
+  }
+
+  ///
+  /// VARIABLES
+  ///
 
   final isLoading = ValueNotifier<bool>(false);
   final fact = ValueNotifier<String>('');
+
+  ///
+  /// METHODS
+  ///
 
   /// Returns a new fact from the backend
   Future<void> getFact() async {
