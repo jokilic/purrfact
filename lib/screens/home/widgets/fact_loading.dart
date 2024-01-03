@@ -11,6 +11,7 @@ class FactLoading extends StatefulWidget {
 
 class _FactLoadingState extends State<FactLoading> with SingleTickerProviderStateMixin {
   late final AnimationController animationController;
+  late final int randomNumber;
 
   @override
   void initState() {
@@ -20,6 +21,8 @@ class _FactLoadingState extends State<FactLoading> with SingleTickerProviderStat
       vsync: this,
       duration: const Duration(milliseconds: 900),
     )..repeat();
+
+    randomNumber = Random().nextInt(4) + 1;
   }
 
   @override
@@ -29,8 +32,8 @@ class _FactLoadingState extends State<FactLoading> with SingleTickerProviderStat
           angle: animationController.value * 2 * pi,
           child: child,
         ),
-        child: const CatWidget(
-          'assets/maca6.png',
+        child: CatWidget(
+          'assets/maca$randomNumber.png',
         ),
       );
 
